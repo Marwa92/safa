@@ -23,7 +23,7 @@ module.exports = {
   },
   plugins: ["react", "react-hooks"],
   rules: {
-    semi: ["error", "never"],
+    semi: ["error", "always"],
     "react/jsx-filename-extension": [1, { extensions: [".js", ".jsx"] }],
     "prettier/prettier": ["error"],
   },
