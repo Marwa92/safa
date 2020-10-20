@@ -44,7 +44,7 @@ ol.progtrckr {
   }
   
   ol.progtrckr li.progtrckr-done {
-    color: black;
+    color: #0984db;
     border-bottom: 4px solid#0984db;
   }
   
@@ -93,6 +93,7 @@ ol.progtrckr {
     content: "\2713";
     color: white;
     background-color: #5cb85c;
+    display: none;
     width: 1.2em;
     line-height: 1.2em;
     border-radius: 1.2em;
@@ -111,14 +112,25 @@ ol.progtrckr {
   
   button.next:hover , button.back:hover{
     box-shadow:0px 0px 0px 2px #ffffff;
+    border: none;
   }
 
   button.next {
     margin-top: 5px;
     float: right;
+    background-color :#0984db;
+    border: none;
+    border-radius: 5px;
+    margin-right: 20%;
+    width: 20%;
   }
 
   button.back {
     margin-top: 5px;
-    float: left;
+    background-color :rgb(214, 211, 211);
+    border-radius: 5px;
+    border:none;
+    width: 10%;
+    /* float: right; */
+    margin-left: 48.5%;
   }
