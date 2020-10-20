@@ -8,6 +8,7 @@ import PersonalInfo from "./PersonalInfo";
 import CompanyInfo from "./CompanyInfo";
 import Message from "./Message";
 import "./main.css";
+// import axios from "../../../utils/API";
 
 const FlexWrapper = styled.div`
   background-size: cover;
@@ -51,7 +52,7 @@ export default function Signup() {
   const handleChange = (event, inputSetter) => {
     const { id, value } = event.target;
     inputSetter({ [id]: value });
-    console.log("e:", event);
+    console.log("e:", userData, id, value);
   };
 
   const steps = [
@@ -119,14 +120,13 @@ export default function Signup() {
     },
   ];
 
-
   return (
     <FlexWrapper>
       <StyledStepZilla
         showSteps
         steps={steps}
         preventEnterSubmission={false}
-        hocValidationAppliedTo={[0, 1, 2, 3]}
+        hocValidationAppliedTo={[-1]}
         startAtStep={
           window.sessionStorage.getItem("step")
             ? parseFloat(window.sessionStorage.getItem("step"))
@@ -136,7 +136,10 @@ export default function Signup() {
         prevBtnOnLastStep
         nextButtonCls="next"
         backButtonCls="back"
+        backButtonText="back"
         stepsNavigation
+        // preventEnterSubmission={true}
+        // nextTextOnFinalActionStep={"Confirm"}
       />
     </FlexWrapper>
   );
