@@ -1,13 +1,13 @@
-import React, { useReducer } from "react";
-import StepZilla from "react-stepzilla";
+import React, { useReducer, useState } from "react";
 import styled from "styled-components";
+import { Form } from 'react-bootstrap'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUserCircle, faBuilding } from "@fortawesome/free-regular-svg-icons";
 import { faShieldAlt } from "@fortawesome/free-solid-svg-icons";
-import PersonalInfo from "./PersonalInfo";
-import CompanyInfo from "./CompanyInfo";
-import Message from "./Message";
-import "./main.css";
+import Step1 from "./Step1";
+import Step2 from "./Step2";
+import Step3 from "./Step3";
+
 // import axios from "../../../utils/API";
 
 const FlexWrapper = styled.div`
@@ -16,14 +16,15 @@ const FlexWrapper = styled.div`
   min-width: 100vw;
   margin-top: 10vh;
 `;
-const StyledStepZilla = styled(StepZilla)`
-  min-width: 50vw;
-  margin-left: 25vw;
-  margin-right: 25vw;
-  text-align: center;
-`;
+// const StyledStepZilla = styled(StepZilla)`
+//   min-width: 50vw;
+//   margin-left: 25vw;
+//   margin-right: 25vw;
+//   text-align: center;
+// `;
 
 export default function Signup() {
+  const [currentStep, setCurrentStep] = useState(1)
   const [userData, setUserData] = useReducer(
     (state, newState) => ({ ...state, ...newState }),
     {
@@ -122,25 +123,26 @@ export default function Signup() {
 
   return (
     <FlexWrapper>
-      <StyledStepZilla
-        showSteps
-        steps={steps}
-        preventEnterSubmission={false}
-        hocValidationAppliedTo={[-1]}
-        startAtStep={
-          window.sessionStorage.getItem("step")
-            ? parseFloat(window.sessionStorage.getItem("step"))
-            : 0
-        }
-        onStepChange={(step) => window.sessionStorage.setItem("step", step)}
-        prevBtnOnLastStep
-        nextButtonCls="next"
-        backButtonCls="back"
-        backButtonText="back"
-        stepsNavigation
-        // preventEnterSubmission={true}
-        // nextTextOnFinalActionStep={"Confirm"}
-      />
+<Form>
+<Step1
+currentStep={currentStep}
+          userData={userData}
+          setUserData={setUserData}
+          onChange={handleChange}
+        />
+             <Step2
+             currentStep={currentStep}
+          userData={userData}
+          setUserData={setUserData}
+          onChange={handleChange}
+        />
+             <Step3
+             currentStep={currentStep}
+          userData={userData}
+          setUserData={setUserData}
+          onChange={handleChange}
+        />
+</Form>
     </FlexWrapper>
   );
 }
