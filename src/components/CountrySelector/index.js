@@ -64,7 +64,7 @@ export default function CountrySelector(props) {
       <Select
         as="select"
         id={id}
-        onChange={(e) => {setUserData({id: 55});
+        onChange={(e) => {setUserData({[id]: e.target.value });
         console.log("ee:", e.target.id, e.target.value);}}
         fontFamily={fontFamily}
         boxSizing={boxSizing}
@@ -81,11 +81,11 @@ export default function CountrySelector(props) {
         {array.map((item, index) => (
           <Option
             key={index}
-            value={item}
+            value={item.code}
             fontFamily={fontFamily}
             color={color}
           >
-            {item}
+            {item.name}
           </Option>
         ))}
       </Select>

@@ -44,7 +44,7 @@ const FormControl = styled(Form.Control)`
 `;
 export default function Step1(props) {
   const { userData, setUserData, handleChange, currentStep} = props;
-  let countries = ["Egypt", "UK", "Canda"];
+  let countries = [{name:"Egypt", code: '0'}, {name:"UK", code:'1'}, {name:"Canda", code:'3'}];
   return (
     currentStep !==1?null:( <Wrapper>
       Tell us more about you.
@@ -101,7 +101,7 @@ export default function Step1(props) {
                 fontWeight="300"
                 phone={userData.user_phone}
                 setUserData={setUserData}
-                onChange={(e)=>setUserData({user_phone: e})}
+                onChange={(e)=>setUserData({user_phone: e.split('+')[1]})}
               />
             </Form.Group>
           </Col>

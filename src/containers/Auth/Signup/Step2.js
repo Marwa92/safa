@@ -49,8 +49,8 @@ text-align: center;`
 
 export default function Step2(props) {
   const { userData, setUserData, handleChange, currentStep } = props;
-  let countries = ["Egypt", "UK", "Canda"];
-  let cities = ["Cairo", "Giza", "Alex"];
+  let countries = [{name:"Egypt", code: '0'}, {name:"UK", code:'1'}, {name:"Canda", code:'3'}];
+  let cities =[{name:"cairo", code: '7'}, {name:"Giza", code:'8'}, {name:"Alex", code:'9'}];
 
   return (
     currentStep !==2?null:(<Wrapper>
@@ -139,7 +139,7 @@ export default function Step2(props) {
                 backgroundSize="1em 1em"
                 fontWeight="300"
                 phone={userData.company_phone}
-                onChange={(e)=>setUserData({company_phone: e})}
+                onChange={(e)=>setUserData({company_phone: e.split('+')[1]})}
               />
             </Form.Group>
           </Col>
@@ -153,7 +153,7 @@ export default function Step2(props) {
                 backgroundSize="1em 1em"
                 fontWeight="300"
                 phone={userData.user_phone}
-                onChange={(e)=>setUserData({user_phone: e})}
+                onChange={(e)=>setUserData({user_phone: e.split('+')[1]})}
               />
             </Form.Group>
           </Col>
