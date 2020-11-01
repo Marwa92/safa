@@ -101,15 +101,14 @@ export default function Step2(props) {
             </Form.Group>
           </Col>
           <Col sm={12} md={6} className="">
-            <Form.Group className="form-label-group">
-              <FormLabel className="label">PHONE NUMBER</FormLabel>
-              <PhoneField
-                id="company_phone"
+          <Form.Group className="form-label-group">
+              <FormLabel className="label">CITY</FormLabel>
+              <CountrySelector
+                id="company_city_id"
                 fontFamily="Montserrat"
                 backgroundImage={`url(${arrow})`}
                 backgroundSize="1em 1em"
                 fontWeight="300"
-                phone={userData.company_phone}
                 setUserData={setUserData}
                 onChange={onChange}
               />
