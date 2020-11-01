@@ -7,6 +7,7 @@ import { faShieldAlt } from "@fortawesome/free-solid-svg-icons";
 import Step1 from "./Step1";
 import Step2 from "./Step2";
 import Step3 from "./Step3";
+import Bar from '../../../components/Bar'
 import PrevButton from '../../../components/PrevButton'
 import NextButton from '../../../components/NextButton'
 
@@ -18,12 +19,6 @@ const FlexWrapper = styled.div`
   min-width: 100vw;
   margin-top: 10vh;
 `;
-// const StyledStepZilla = styled(StepZilla)`
-//   min-width: 50vw;
-//   margin-left: 25vw;
-//   margin-right: 25vw;
-//   text-align: center;
-// `;
 
 export default function Signup() {
   const [currentStep, setCurrentStep] = useState(1)
@@ -58,70 +53,28 @@ export default function Signup() {
     console.log("e:", userData, id, value);
   };
 
-  const steps = [
-    {
-      name: (
-        <FontAwesomeIcon
-          icon={faUserCircle}
-          size="2x"
-          style={{
-            marginBottom: "-28px",
-            position: "relative",
-            zIndex: "1",
-          }}
-        />
-      )
-    },
-
-    {
-      name: (
-        <FontAwesomeIcon
-          icon={faBuilding}
-          size="2x"
-          style={{
-            marginBottom: "-28px",
-            position: "relative",
-            zIndex: "1",
-          }}
-        />
-      )
-    },
-
-    {
-      name: (
-        <FontAwesomeIcon
-          icon={faShieldAlt}
-          size="2x"
-          style={{
-            marginBottom: "-28px",
-            position: "relative",
-            zIndex: "1",
-          }}
-        />
-      )
-    },
-  ];
 
   return (
     <FlexWrapper>
-<Form>
-<Step1
-currentStep={currentStep}
+      <Bar currentStep={currentStep} />
+      <Form className="mt-4">
+       <Step1
+          currentStep={currentStep}
           userData={userData}
           setUserData={setUserData}
           onChange={handleChange}
         />
-             <Step2
-             currentStep={currentStep}
-          userData={userData}
-          setUserData={setUserData}
-          onChange={handleChange}
+        <Step2
+            currentStep={currentStep}
+            userData={userData}
+            setUserData={setUserData}
+            onChange={handleChange}
         />
-             <Step3
-             currentStep={currentStep}
-          userData={userData}
-          setUserData={setUserData}
-          onChange={handleChange}
+        <Step3
+            currentStep={currentStep}
+            userData={userData}
+            setUserData={setUserData}
+            onChange={handleChange}
         />
     { currentStep !==1&&   <PrevButton currentStep={currentStep} setCurrentStep={setCurrentStep} />}
    {   currentStep <3&&  <NextButton currentStep={currentStep} setCurrentStep={setCurrentStep} />}
