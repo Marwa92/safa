@@ -43,7 +43,7 @@ const Phone = styled(PhoneInput)`
   }
 `;
 export default function PhoneField(props) {
-  const { phone, setUserData, onChange } = props;
+  const { phone, onChange } = props;
   return (
     <Fragment>
       <Phone

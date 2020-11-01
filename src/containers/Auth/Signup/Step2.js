@@ -139,7 +139,6 @@ export default function Step2(props) {
                 backgroundSize="1em 1em"
                 fontWeight="300"
                 phone={userData.company_phone}
-                setUserData={setUserData}
                 onChange={(e)=>setUserData({company_phone: e})}
               />
             </Form.Group>
@@ -153,9 +152,8 @@ export default function Step2(props) {
                 backgroundImage={`url(${arrow})`}
                 backgroundSize="1em 1em"
                 fontWeight="300"
-                phone={userData.company_phone}
-                setUserData={setUserData}
-                onChange={(e)=>setUserData({company_phone: e})}
+                phone={userData.user_phone}
+                onChange={(e)=>setUserData({user_phone: e})}
               />
             </Form.Group>
           </Col>
