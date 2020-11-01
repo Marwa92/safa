@@ -4,11 +4,16 @@ import styled from 'styled-components'
 
 const Prevbutton = styled(Button)`
 width: 5em;
-margin-left: 63%;
+margin-left: 60vw;
 margin-top: 1.75em;
 background-color: #DCDFE1;
 border: none;
 color: grey;
+display: inline-block;
+:hover {
+color: white;
+border: black;
+}
 `
 
 export default function PrevButton(props) {

@@ -57,14 +57,15 @@ export default function CountrySelector(props) {
     fontSize,
     fontFamily,
     fontWeight,
+    array
   } = props;
-  let array = ["Egypt", "UK", "Canda"];
   return (
     <Container>
       <Select
         as="select"
         id={id}
-        onChange={(e) => onChange(e, setUserData)}
+        onChange={(e) => {onChange(e, setUserData);
+        console.log("ee:", e.target.id, e.target.value);}}
         fontFamily={fontFamily}
         boxSizing={boxSizing}
         height={height}
@@ -76,8 +77,6 @@ export default function CountrySelector(props) {
         backgroundSize={backgroundSize}
         fontSize={fontSize}
         fontWeight={fontWeight}
-        color={color}
-        box-shadow={boxShadow}
       >
         {array.map((item, index) => (
           <Option

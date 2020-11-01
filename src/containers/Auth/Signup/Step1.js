@@ -27,7 +27,6 @@ const FormLabel = styled(Form.Label)`
   line-height: 1.2em;
   display: block;
   text-align: left;
-  /* float: left; */
 `;
 const FormControl = styled(Form.Control)`
   box-sizing: border-box;
@@ -45,6 +44,7 @@ const FormControl = styled(Form.Control)`
 `;
 export default function Step1(props) {
   const { userData, setUserData, onChange, currentStep} = props;
+  let countries = ["Egypt", "UK", "Canda"];
   return (
     currentStep !==1?null:( <Wrapper>
       Tell us more about you.
@@ -57,7 +57,7 @@ export default function Step1(props) {
             type="text"
             placeholder="Enter your full name"
             value={userData.user_full_name}
-            onChange={(e) => onChange(e, setUserData)}
+            onChange={onChange}
           />
         </Form.Group>
         <Form.Group
@@ -71,7 +71,7 @@ export default function Step1(props) {
             type="email"
             placeholder="Enter your business email"
             value={userData.user_email}
-            onChange={(e) => onChange(e, setUserData)}
+            onChange={onChange}
           />
         </Form.Group>
         <Row>
@@ -86,6 +86,7 @@ export default function Step1(props) {
                 fontWeight="300"
                 setUserData={setUserData}
                 onChange={onChange}
+                array={countries}
               />
             </Form.Group>
           </Col>
@@ -113,7 +114,7 @@ export default function Step1(props) {
             type="password"
             placeholder="Choose a password"
             value={userData.user_password}
-            onChange={(e) => onChange(e, setUserData)}
+            onChange={onChange}
           />
         </Form.Group>
         <Form.Group controlId="user_password_confirmation" className="form-label-group">
@@ -124,7 +125,7 @@ export default function Step1(props) {
             type="password"
             placeholder="Repeat your password"
             value={userData.user_password_confirmation}
-            onChange={(e) => onChange(e, setUserData)}
+            onChange={onChange}
           />
         </Form.Group>
       </FormContainer>

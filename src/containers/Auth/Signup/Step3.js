@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import send from '../../../assets/send.png';
 
 const Wrapper = styled.div`
   margin-top: 2.5em;
@@ -17,7 +18,12 @@ const MessageContainer = styled.div`
   border-radius: 2px;
   color: #ff5f59;
 `;
-
+const ImageWrapper = styled.div`
+    display: flex;
+    justify-content: center;
+    img {
+        max-width: 200px;
+    }`
 const Email = styled.p`
   color: black;
 `;
@@ -28,6 +34,9 @@ export default function Step3(props) {
     currentStep !==3?null:(  <Wrapper>
       You're all set.Ready?
       <MessageContainer>
+      <ImageWrapper >
+            <img alt="email img" src={send} />
+          </ImageWrapper>
         We will send message to this email <Email>example@example.com</Email>
       </MessageContainer>
     </Wrapper>)

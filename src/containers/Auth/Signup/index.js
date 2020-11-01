@@ -28,32 +28,34 @@ export default function Signup() {
   const [userData, setUserData] = useReducer(
     (state, newState) => ({ ...state, ...newState }),
     {
-      user_email: "teswx1stwqw11qa2qas1sss1asssaqsssw1_22@gmail.com",
-      user_password: "123456Aa",
-      user_password_confirmation: "123456Aa",
+      user_email: "",
+      user_password: "",
+      user_password_confirmation: "",
       lang: "en",
-      company_name: "test",
-      company_address: "test",
-      company_phone: "3487945646",
-      company_business_email: "test@test.com",
+      company_name: "",
+      company_address: "",
+      company_phone: "",
+      company_business_email: "",
       company_avatar: "",
-      company_country_id: "45",
-      company_city_id: "468",
-      user_full_name: "jkhjgfyds",
-      user_phone: "56753465"
+      company_country_id: "",
+      company_city_id: "",
+      user_full_name: "",
+      user_phone: ""
     }
   );
 const [success, setSuccess] = useState(false)
-  const handleChange = (event, inputSetter) => {
+  const handleChange = (event) => {
     const { id, value } = event.target;
-    inputSetter({ [id]: value });
-    console.log("e:", userData, id, value);
+    setUserData({ [id]: value });
+    console.log("userData:", userData);
+    
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     signUp(userData, setSuccess);
   };
+  
   return (
     <FlexWrapper>
      {success?<Success />: <><Bar currentStep={currentStep} />

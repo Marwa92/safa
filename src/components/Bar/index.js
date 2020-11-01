@@ -10,14 +10,14 @@ padding: 0 2%;
 flex-direction:row;
 .active{
   color: #ff5f59;
-  border:1px solid red;
+  border:1px solid #ff5f59;
 }
 .done{
-  color: #085F9B;
-  border: 1px solid #085F9B;
+  color: #1877fb;
+  border: 1px solid #1877fb;
 }
 .complete{
-  background-color: #085F9B;
+  background-color: #1877fb;
 }
 `
 

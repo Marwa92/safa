@@ -42,12 +42,24 @@ const FormControl = styled(Form.Control)`
     font-size: 0.938em;
   }
 `;
+
+const Note= styled.p` 
+font-size: 1em;
+text-align: center;`
+
 export default function Step2(props) {
   const { userData, setUserData, onChange, currentStep } = props;
+  let countries = ["Egypt", "UK", "Canda"];
+  let cities = ["Cairo", "Giza", "Alex"];
+
   return (
     currentStep !==2?null:(<Wrapper>
       Verify your company.
       <FormContainer>
+      <Note>
+          Entering this information correctly will facilitate the company
+          verification process
+        </Note>
       <Form.Group controlId="company_name" className="form-label-group">
           <FormLabel className="label">COMPANY NAME</FormLabel>
           <FormControl
@@ -56,7 +68,7 @@ export default function Step2(props) {
             type="text"
             placeholder="Enter your company name"
             value={userData.company_name}
-            onChange={(e) => onChange(e, setUserData)}
+            onChange={onChange}
           />
         </Form.Group>
         <Form.Group controlId="company_address" className="form-label-group">
@@ -67,7 +79,7 @@ export default function Step2(props) {
             type="text"
             placeholder="Enter your address"
             value={userData.company_address}
-            onChange={(e) => onChange(e, setUserData)}
+            onChange={onChange}
           />
         </Form.Group>
         <Form.Group
@@ -81,7 +93,7 @@ export default function Step2(props) {
             type="email"
             placeholder="Enter your business email"
             value={userData.company_business_email}
-            onChange={(e) => onChange(e, setUserData)}
+            onChange={onChange}
           />
         </Form.Group>
         <Row>
@@ -96,6 +108,7 @@ export default function Step2(props) {
                 fontWeight="300"
                 setUserData={setUserData}
                 onChange={onChange}
+                array={countries}
               />
             </Form.Group>
           </Col>
@@ -107,6 +120,7 @@ export default function Step2(props) {
                 fontFamily="Montserrat"
                 backgroundImage={`url(${arrow})`}
                 backgroundSize="1em 1em"
+                array={cities}
                 fontWeight="300"
                 setUserData={setUserData}
                 onChange={onChange}
