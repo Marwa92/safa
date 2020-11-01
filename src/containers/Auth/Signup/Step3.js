@@ -28,18 +28,18 @@ const ConfirmButton = styled(Button)`
   margin-top: 20px;
 `;
 export default function Step3(props) {
-  const { userData } = props;
+  const { userData, currentStep } = props;
   const handleSubmit = (e) => {
     e.preventDefault();
     signUp(userData);
   };
   return (
-    <Wrapper>
+    currentStep !==3?null:(  <Wrapper>
       You're all set.Ready?
       <MessageContainer>
         We will send message to this email <Email>example@example.com</Email>
         <ConfirmButton onClick={handleSubmit}>Confirm</ConfirmButton>
       </MessageContainer>
-    </Wrapper>
+    </Wrapper>)
   );
 }

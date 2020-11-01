@@ -7,6 +7,8 @@ import { faShieldAlt } from "@fortawesome/free-solid-svg-icons";
 import Step1 from "./Step1";
 import Step2 from "./Step2";
 import Step3 from "./Step3";
+import PrevButton from '../../../components/PrevButton'
+import NextButton from '../../../components/NextButton'
 
 // import axios from "../../../utils/API";
 
@@ -68,14 +70,7 @@ export default function Signup() {
             zIndex: "1",
           }}
         />
-      ),
-      component: (
-        <PersonalInfo
-          userData={userData}
-          setUserData={setUserData}
-          onChange={handleChange}
-        />
-      ),
+      )
     },
 
     {
@@ -89,14 +84,7 @@ export default function Signup() {
             zIndex: "1",
           }}
         />
-      ),
-      component: (
-        <CompanyInfo
-          userData={userData}
-          setUserData={setUserData}
-          onChange={handleChange}
-        />
-      ),
+      )
     },
 
     {
@@ -110,14 +98,7 @@ export default function Signup() {
             zIndex: "1",
           }}
         />
-      ),
-      component: (
-        <Message
-          userData={userData}
-          setUserData={setUserData}
-          onChange={handleChange}
-        />
-      ),
+      )
     },
   ];
 
@@ -142,6 +123,8 @@ currentStep={currentStep}
           setUserData={setUserData}
           onChange={handleChange}
         />
+    { currentStep !==1&&   <PrevButton currentStep={currentStep} setCurrentStep={setCurrentStep} />}
+   {   currentStep <3&&  <NextButton currentStep={currentStep} setCurrentStep={setCurrentStep} />}
 </Form>
     </FlexWrapper>
   );

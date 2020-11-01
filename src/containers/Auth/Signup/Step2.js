@@ -44,13 +44,24 @@ const FormControl = styled(Form.Control)`
   }
 `;
 export default function Step2(props) {
-  const { userData, setUserData, onChange } = props;
+  const { userData, setUserData, onChange, currentStep } = props;
   return (
-    <Wrapper>
+    currentStep !==2?null:(<Wrapper>
       Verify your company.
       <FormContainer>
+      <Form.Group controlId="company_name" className="form-label-group">
+          <FormLabel className="label">COMPANY NAME</FormLabel>
+          <FormControl
+            required
+            className="input"
+            type="text"
+            placeholder="Enter your company name"
+            value={userData.company_name}
+            onChange={(e) => onChange(e, setUserData)}
+          />
+        </Form.Group>
         <Form.Group controlId="company_address" className="form-label-group">
-          <FormLabel className="label">ADRESS</FormLabel>
+          <FormLabel className="label">ADDRESS</FormLabel>
           <FormControl
             required
             className="input"
@@ -107,6 +118,6 @@ export default function Step2(props) {
           </Col>
         </Row>
       </FormContainer>
-    </Wrapper>
+    </Wrapper>)
   );
 }

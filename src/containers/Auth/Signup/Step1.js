@@ -44,9 +44,9 @@ const FormControl = styled(Form.Control)`
   }
 `;
 export default function Step1(props) {
-  const { userData, setUserData, onChange } = props;
+  const { userData, setUserData, onChange, currentStep} = props;
   return (
-    <Wrapper>
+    currentStep !==1?null:( <Wrapper>
       Tell us more about you.
       <FormContainer>
         <Form.Group controlId="user_full_name" className="form-label-group">
@@ -61,7 +61,7 @@ export default function Step1(props) {
           />
         </Form.Group>
         <Form.Group
-          controlId="company_business_email"
+          controlId="user_email"
           className="form-label-group"
         >
           <FormLabel className="label">BUSINESS EMAIL</FormLabel>
@@ -70,7 +70,7 @@ export default function Step1(props) {
             className="input"
             type="email"
             placeholder="Enter your business email"
-            value={userData.company_business_email}
+            value={userData.user_email}
             onChange={(e) => onChange(e, setUserData)}
           />
         </Form.Group>
@@ -105,7 +105,29 @@ export default function Step1(props) {
             </Form.Group>
           </Col>
         </Row>
+        <Form.Group controlId="user_password" className="form-label-group">
+          <FormLabel className="label">PASSWORD</FormLabel>
+          <FormControl
+            required
+            className="input"
+            type="password"
+            placeholder="Choose a password"
+            value={userData.user_password}
+            onChange={(e) => onChange(e, setUserData)}
+          />
+        </Form.Group>
+        <Form.Group controlId="user_password_confirmation" className="form-label-group">
+          <FormLabel className="label">REPEAT PASSWORD</FormLabel>
+          <FormControl
+            required
+            className="input"
+            type="password"
+            placeholder="Repeat your password"
+            value={userData.user_password_confirmation}
+            onChange={(e) => onChange(e, setUserData)}
+          />
+        </Form.Group>
       </FormContainer>
-    </Wrapper>
+    </Wrapper>)
   );
 }

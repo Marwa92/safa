@@ -5,9 +5,16 @@ import styled from 'styled-components'
 const Nxtbutton = styled(Button)`
 `
 
-export default function NextButton() {
+export default function NextButton(props) {
+    const {currentStep, setCurrentStep} = props
+    const next = ()=>{   
+         let step = currentStep
+        // If the current step is 1 or 2, then add one on "next" button click
+        step = currentStep >= 2? 3: currentStep + 1
+       setCurrentStep(step)
+    }
     return (
-        <Nxtbutton variant="primary" onClick={}>
+        <Nxtbutton variant="primary" onClick={next}>
           Next  
         </Nxtbutton>
     )
