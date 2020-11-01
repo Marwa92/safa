@@ -3,6 +3,10 @@ import { Button } from 'react-bootstrap'
 import styled from 'styled-components'
 
 const Nxtbutton = styled(Button)`
+float: right;
+width: 12em;
+margin-right: 20%;
+margin-top: 1.75em;
 `
 
 export default function NextButton(props) {
@@ -15,7 +19,7 @@ export default function NextButton(props) {
     }
     return (
         <Nxtbutton variant="primary" onClick={next}>
-          Next  
+        Next
         </Nxtbutton>
     )
 }

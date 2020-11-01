@@ -22,14 +22,13 @@ const Email = styled.p`
   color: black;
 `;
 
-export default function Step3(props) {
-  const { currentStep } = props;
+export default function Step3() {
+
   return (
-    currentStep !==3?null:(  <Wrapper>
-      You're all set.Ready?
+ <Wrapper>
       <MessageContainer>
-        We will send message to this email <Email>example@example.com</Email>
+        Congratz, you are successfully created your account. We Just sent a confirmation email. Please check your Email. <Email>Resend Email</Email>
       </MessageContainer>
-    </Wrapper>)
+    </Wrapper>
   );
 }
