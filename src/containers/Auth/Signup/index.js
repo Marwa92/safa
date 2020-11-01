@@ -34,17 +34,13 @@ export default function Signup() {
       lang: "en",
       company_name: "test",
       company_address: "test",
-      company_phone: "3487945646",
+      company_phone: "920003777",
       company_business_email: "test@test.com",
-      company_avatar: "/home/abdo/Pictures/Screenshot from 2020-08-16 14-22-54.png",
+      company_avatar: "",
       company_country_id: "45",
       company_city_id: "468",
       user_full_name: "jkhjgfyds",
-      user_phone: "jkhgfm",
-      user_position: "jkhufm",
-      user_nationality: "jhgtf,",
-      user_status: "hjgfd",
-      user_is_admin: "hhmd",
+      user_phone: "920003777",
     }
   );
 const [success, setSuccess] = useState(false)

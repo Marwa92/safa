@@ -59,9 +59,6 @@ export default function PhoneField(props) {
             : "Phone number required"
         }
       />
-      {phone && !isValidPhoneNumber(phone) && (
-        <p style={{ color: "red" }}>The phone number is invalid</p>
-      )}
     </Fragment>
   );
 }
