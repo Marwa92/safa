@@ -36,7 +36,7 @@ export default function Signup() {
       company_address: "test",
       company_phone: "3487945646",
       company_business_email: "test@test.com",
-      company_avatar: "jgft",
+      company_avatar: "/home/abdo/Pictures/Screenshot from 2020-08-16 14-22-54.png",
       company_country_id: "45",
       company_city_id: "468",
       company_extra_data:[ "4534534534534e5"],
@@ -49,7 +49,7 @@ export default function Signup() {
       user_extra_data: ["4534534534534e5"],
     }
   );
-const [success, setSuccess] = useState(false)
+const [success, setSuccess] = useState(true)
   const handleChange = (event, inputSetter) => {
     const { id, value } = event.target;
     inputSetter({ [id]: value });
