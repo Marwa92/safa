@@ -43,14 +43,14 @@ const Phone = styled(PhoneInput)`
   }
 `;
 export default function PhoneField(props) {
-  const { phone, setUserData } = props;
+  const { phone, setUserData, onChange } = props;
   return (
     <Fragment>
       <Phone
         defaultCountry="SA"
         placeholder="Enter phone number"
         value={phone}
-        onChange={(e) => setUserData(e)}
+        onChange={onChange}
         error={
           phone
             ? isValidPhoneNumber(phone)

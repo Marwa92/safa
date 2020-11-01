@@ -64,19 +64,19 @@ const [success, setSuccess] = useState(false)
           currentStep={currentStep}
           userData={userData}
           setUserData={setUserData}
-          onChange={handleChange}
+          handleChange={handleChange}
         />
         <Step2
             currentStep={currentStep}
             userData={userData}
             setUserData={setUserData}
-            onChange={handleChange}
+            handleChange={handleChange}
         />
         <Step3
             currentStep={currentStep}
             userData={userData}
             setUserData={setUserData}
-            onChange={handleChange}
+            handleChange={handleChange}
         />
     { currentStep !==1&&   <PrevButton currentStep={currentStep} setCurrentStep={setCurrentStep} />}
    {   currentStep <3?  <NextButton currentStep={currentStep} setCurrentStep={setCurrentStep} />: <SubmitButton onClick={handleSubmit}>Confirm</SubmitButton>}

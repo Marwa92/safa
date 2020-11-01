@@ -48,7 +48,7 @@ font-size: 1em;
 text-align: center;`
 
 export default function Step2(props) {
-  const { userData, setUserData, onChange, currentStep } = props;
+  const { userData, setUserData, handleChange, currentStep } = props;
   let countries = ["Egypt", "UK", "Canda"];
   let cities = ["Cairo", "Giza", "Alex"];
 
@@ -68,7 +68,7 @@ export default function Step2(props) {
             type="text"
             placeholder="Enter your company name"
             value={userData.company_name}
-            onChange={onChange}
+            onChange={handleChange}
           />
         </Form.Group>
         <Form.Group controlId="company_address" className="form-label-group">
@@ -79,7 +79,7 @@ export default function Step2(props) {
             type="text"
             placeholder="Enter your address"
             value={userData.company_address}
-            onChange={onChange}
+            onChange={handleChange}
           />
         </Form.Group>
         <Form.Group
@@ -93,7 +93,7 @@ export default function Step2(props) {
             type="email"
             placeholder="Enter your business email"
             value={userData.company_business_email}
-            onChange={onChange}
+            onChange={handleChange}
           />
         </Form.Group>
         <Row>
@@ -107,7 +107,7 @@ export default function Step2(props) {
                 backgroundSize="1em 1em"
                 fontWeight="300"
                 setUserData={setUserData}
-                onChange={onChange}
+                onChange={handleChange}
                 array={countries}
               />
             </Form.Group>
@@ -123,7 +123,7 @@ export default function Step2(props) {
                 array={cities}
                 fontWeight="300"
                 setUserData={setUserData}
-                onChange={onChange}
+                onChange={handleChange}
               />
             </Form.Group>
           </Col>
@@ -140,7 +140,7 @@ export default function Step2(props) {
                 fontWeight="300"
                 phone={userData.company_phone}
                 setUserData={setUserData}
-                onChange={onChange}
+                onChange={(e)=>setUserData({company_phone: e})}
               />
             </Form.Group>
           </Col>
@@ -155,7 +155,7 @@ export default function Step2(props) {
                 fontWeight="300"
                 phone={userData.company_phone}
                 setUserData={setUserData}
-                onChange={onChange}
+                onChange={(e)=>setUserData({company_phone: e})}
               />
             </Form.Group>
           </Col>

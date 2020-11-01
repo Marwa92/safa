@@ -43,7 +43,7 @@ const FormControl = styled(Form.Control)`
   }
 `;
 export default function Step1(props) {
-  const { userData, setUserData, onChange, currentStep} = props;
+  const { userData, setUserData, handleChange, currentStep} = props;
   let countries = ["Egypt", "UK", "Canda"];
   return (
     currentStep !==1?null:( <Wrapper>
@@ -57,7 +57,7 @@ export default function Step1(props) {
             type="text"
             placeholder="Enter your full name"
             value={userData.user_full_name}
-            onChange={onChange}
+            onChange={handleChange}
           />
         </Form.Group>
         <Form.Group
@@ -71,7 +71,7 @@ export default function Step1(props) {
             type="email"
             placeholder="Enter your business email"
             value={userData.user_email}
-            onChange={onChange}
+            onChange={handleChange}
           />
         </Form.Group>
         <Row>
@@ -85,7 +85,7 @@ export default function Step1(props) {
                 backgroundSize="1em 1em"
                 fontWeight="300"
                 setUserData={setUserData}
-                onChange={onChange}
+                onChange={handleChange}
                 array={countries}
               />
             </Form.Group>
@@ -101,7 +101,7 @@ export default function Step1(props) {
                 fontWeight="300"
                 phone={userData.user_phone}
                 setUserData={setUserData}
-                onChange={onChange}
+                onChange={(e)=>setUserData({user_phone: e})}
               />
             </Form.Group>
           </Col>
@@ -114,7 +114,7 @@ export default function Step1(props) {
             type="password"
             placeholder="Choose a password"
             value={userData.user_password}
-            onChange={onChange}
+            onChange={handleChange}
           />
         </Form.Group>
         <Form.Group controlId="user_password_confirmation" className="form-label-group">
@@ -125,7 +125,7 @@ export default function Step1(props) {
             type="password"
             placeholder="Repeat your password"
             value={userData.user_password_confirmation}
-            onChange={onChange}
+            onChange={handleChange}
           />
         </Form.Group>
       </FormContainer>

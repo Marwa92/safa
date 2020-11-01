@@ -29,7 +29,7 @@ const Email = styled.p`
 `;
 
 export default function Step3(props) {
-  const { currentStep } = props;
+  const { currentStep, userData } = props;
   return (
     currentStep !==3?null:(  <Wrapper>
       You're all set.Ready?
@@ -37,7 +37,7 @@ export default function Step3(props) {
       <ImageWrapper >
             <img alt="email img" src={send} />
           </ImageWrapper>
-        We will send message to this email <Email>example@example.com</Email>
+        We will send message to this email <Email>{userData.email}</Email>
       </MessageContainer>
     </Wrapper>)
   );
