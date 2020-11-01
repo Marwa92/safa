@@ -64,7 +64,7 @@ export default function CountrySelector(props) {
       <Select
         as="select"
         id={id}
-        onChange={(e) => {onChange(e, setUserData);
+        onChange={(e) => {setUserData({id: 55});
         console.log("ee:", e.target.id, e.target.value);}}
         fontFamily={fontFamily}
         boxSizing={boxSizing}

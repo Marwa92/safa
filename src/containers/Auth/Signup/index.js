@@ -37,8 +37,8 @@ export default function Signup() {
       company_phone: "",
       company_business_email: "",
       company_avatar: "",
-      company_country_id: "",
-      company_city_id: "",
+      company_country_id: 55,
+      company_city_id: 55,
       user_full_name: "",
       user_phone: ""
     }

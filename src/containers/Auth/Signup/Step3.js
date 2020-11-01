@@ -37,7 +37,7 @@ export default function Step3(props) {
       <ImageWrapper >
             <img alt="email img" src={send} />
           </ImageWrapper>
-        We will send message to this email <Email>{userData.email}</Email>
+        We will send message to this email <Email>{userData.user_email}</Email>
       </MessageContainer>
     </Wrapper>)
   );
