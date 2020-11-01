@@ -93,12 +93,12 @@ export default function Step1(props) {
             <Form.Group className="form-label-group">
               <FormLabel className="label">PHONE NUMBER</FormLabel>
               <PhoneField
-                id="company_phone"
+                id="user_phone"
                 fontFamily="Montserrat"
                 backgroundImage={`url(${arrow})`}
                 backgroundSize="1em 1em"
                 fontWeight="300"
-                phone={userData.company_phone}
+                phone={userData.user_phone}
                 setUserData={setUserData}
                 onChange={onChange}
               />

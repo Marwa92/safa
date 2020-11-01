@@ -27,7 +27,6 @@ const FormLabel = styled(Form.Label)`
   line-height: 1.2em;
   display: block;
   text-align: left;
-  /* float: left; */
 `;
 const FormControl = styled(Form.Control)`
   box-sizing: border-box;

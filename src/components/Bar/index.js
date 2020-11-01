@@ -9,7 +9,7 @@ margin: 0 20%;
 padding: 0 2%;
 flex-direction:row;
 .active{
-  color: red;
+  color: #ff5f59;
   border:1px solid red;
 }
 .done{

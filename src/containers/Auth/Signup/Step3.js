@@ -15,7 +15,7 @@ const MessageContainer = styled.div`
   padding-right: 0.7em;
   padding-bottom: 0.7em;
   border-radius: 2px;
-  color: red;
+  color: #ff5f59;
 `;
 
 const Email = styled.p`

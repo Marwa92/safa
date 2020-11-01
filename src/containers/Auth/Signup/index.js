@@ -34,13 +34,13 @@ export default function Signup() {
       lang: "en",
       company_name: "test",
       company_address: "test",
-      company_phone: "920003777",
+      company_phone: "3487945646",
       company_business_email: "test@test.com",
       company_avatar: "",
       company_country_id: "45",
       company_city_id: "468",
       user_full_name: "jkhjgfyds",
-      user_phone: "920003777",
+      user_phone: "56753465"
     }
   );
 const [success, setSuccess] = useState(false)
@@ -52,7 +52,7 @@ const [success, setSuccess] = useState(false)
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    signUp(userData, success, setSuccess);
+    signUp(userData, setSuccess);
   };
   return (
     <FlexWrapper>

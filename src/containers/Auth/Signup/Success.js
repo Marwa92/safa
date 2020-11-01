@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import send from '../../../assets/send.png'
 
 const Wrapper = styled.div`
   margin-top: 14em;
@@ -26,13 +27,16 @@ margin-top: 5%;
 font-size: 1em;
 `
 const Email = styled.p`
-  color: red;
+  color: #ff5f59;
 `;
 
 export default function Step3() {
 
   return (
  <Wrapper>
+     <div className="form__submit-img">
+            <img alt="email img" src={send} />
+          </div>
       <MessageContainer className="pt-5">
        <Text> Congratz, you are successfully created your account. We Just sent a confirmation email. Please check your Email.</Text> <Text>Didn't receive it?<Email>Resend Email</Email></Text>
       </MessageContainer>
