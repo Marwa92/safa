@@ -57,7 +57,9 @@ const [success, setSuccess] = useState(false)
   
   return (
     <FlexWrapper>
-     {success?<Success />: <><Bar currentStep={currentStep} />
+     {success?<Success />: 
+     <>
+     <Bar currentStep={currentStep} />
       <Form className="mt-4">
        <Step1
           currentStep={currentStep}
@@ -77,9 +79,12 @@ const [success, setSuccess] = useState(false)
             setUserData={setUserData}
             handleChange={handleChange}
         />
-    { currentStep !==1&&   <PrevButton currentStep={currentStep} setCurrentStep={setCurrentStep} />}
-   {   currentStep <3?  <NextButton currentStep={currentStep} setCurrentStep={setCurrentStep} />: <SubmitButton onClick={handleSubmit}>Confirm</SubmitButton>}
-</Form></>}
+            { currentStep !==1&&
+              <PrevButton currentStep={currentStep} setCurrentStep={setCurrentStep} />}
+          {   currentStep <3?  <NextButton currentStep={currentStep} setCurrentStep={setCurrentStep} />: <SubmitButton onClick={handleSubmit}>Confirm</SubmitButton>}
+      </Form>
+      </>
+      }
     </FlexWrapper>
   );
 }
