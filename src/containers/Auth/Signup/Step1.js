@@ -38,7 +38,6 @@ const FormLabel = styled(Form.Label)`
   text-transform: uppercase;
 `;
 const FormControl = styled(Form.Control)`
-/* position: relative; */
   box-sizing: border-box;
   border: 1px solid #dbdbdb;
   border-radius: 3px;
