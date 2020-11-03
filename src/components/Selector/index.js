@@ -94,7 +94,7 @@ export default function Selector(props) {
     </Container>
   );
 }
-CountrySelector.propTypes = {
+Selector.propTypes = {
   height: PropTypes.string,
   width: PropTypes.string,
   backgroundColor: PropTypes.string,
@@ -113,7 +113,7 @@ CountrySelector.propTypes = {
   id: PropTypes.string,
 };
 
-CountrySelector.defaultProps = {
+Selector.defaultProps = {
   height: "3em",
   width: "100%",
   backgroundColor: "#ffffff",
