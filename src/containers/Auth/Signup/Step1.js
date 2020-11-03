@@ -1,6 +1,8 @@
-import React from "react";
+import React, {useState} from "react";
 import styled from "styled-components";
 import { Form, Col, Row } from "react-bootstrap";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEye } from "@fortawesome/free-regular-svg-icons";
 import CountrySelector from "../../../components/CountrySelector";
 import PhoneField from "../../../components/PhoneField";
 import arrow from "../../../assets/ArrowDown.png";
@@ -36,6 +38,7 @@ const FormLabel = styled(Form.Label)`
   text-transform: uppercase;
 `;
 const FormControl = styled(Form.Control)`
+/* position: relative; */
   box-sizing: border-box;
   border: 1px solid #dbdbdb;
   border-radius: 3px;
@@ -49,9 +52,17 @@ const FormControl = styled(Form.Control)`
     font-size: 0.938em;
   }
 `;
+const Icon = styled(FontAwesomeIcon)`
+      position: absolute;
+      right: 1.2em;
+      bottom: 1.2em;
+      cursor: pointer;    
+`
 export default function Step1(props) {
   const { userData, setUserData, handleChange, currentStep} = props;
   let countries = [{name:"Egypt", code: '0'}, {name:"UK", code:'1'}, {name:"Canda", code:'3'}];
+  const [passwordShow, setPasswordShow] = useState(false);
+  const [showConfirmation, setShowConfirmation] = useState(false);
   return (
     currentStep !==1?null:( <Wrapper>
       Tell us more about you.
@@ -118,10 +129,16 @@ export default function Step1(props) {
           <FormControl
             required
             className="input"
-            type="password"
+            type={passwordShow ? "text" : "password"}
             placeholder="Choose a password"
             value={userData.user_password}
             onChange={handleChange}
+          />
+          <Icon
+              className="icon"
+              icon={faEye}
+              color="#dbdbdb"
+              onClick={() => setPasswordShow(!passwordShow)}
           />
         </FormGroup>
         <FormGroup controlId="user_password_confirmation" className="form-label-group">
@@ -129,10 +146,16 @@ export default function Step1(props) {
           <FormControl
             required
             className="input"
-            type="password"
+            type={showConfirmation ? "text" : "password"}
             placeholder="Repeat your password"
             value={userData.user_password_confirmation}
             onChange={handleChange}
+          />
+              <Icon
+              className="icon"
+              icon={faEye}
+              color="#dbdbdb"
+              onClick={() => setShowConfirmation(!showConfirmation)}
           />
         </FormGroup>
       </FormContainer>
