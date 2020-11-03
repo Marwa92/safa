@@ -46,7 +46,7 @@ const [success, setSuccess] = useState(false)
   const handleChange = (event) => {
     const { id, value } = event.target;
     setUserData({ [id]: value });
-    console.log("userData:", userData);
+    console.log("userData:", userData, id, value);
     
   };
 

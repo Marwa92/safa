@@ -22,6 +22,7 @@ const FormContainer = styled.div`
 `;
 const FormGroup= styled(Form.Group)`
 position: relative;
+display: flex;
 `
 const FormLabel = styled(Form.Label)`
   color: #212529;
@@ -67,16 +68,20 @@ export default function Step2(props) {
           Entering this information correctly will facilitate the company
           verification process
         </Note>
-      <FormGroup controlId="company_name" className="form-label-group">
+      <FormGroup controlId="company_name" className="form-label-group border">
           <FormLabel className="label">COMPANY NAME</FormLabel>
           <FormControl
             required
-            className="input"
+            className="input border-0"
             type="text"
             placeholder="Enter your company name"
             value={userData.company_name}
             onChange={handleChange}
           />
+            <select as="select" onChange={handleChange} value={userData.lang} id="lang" className="px-2">
+              <option value="en">English</option>
+              <option value="ar">Arabic</option>
+            </select>
         </FormGroup>
         <FormGroup controlId="company_address" className="form-label-group">
           <FormLabel className="label">ADDRESS</FormLabel>
@@ -137,7 +142,7 @@ export default function Step2(props) {
         </Row>
         <Row>
           <Col sm={12} md={6} className="">
-            <FormGroup className="form-label-group">
+            <Form.Group className="form-label-group">
               <PhoneField
                 id="company_phone"
                 label="COMPANY PHONE NUMBER"
@@ -148,10 +153,10 @@ export default function Step2(props) {
                 phone={userData.company_phone}
                 onChange={(e)=>setUserData({company_phone: e.split('+')[1]})}
               />
-            </FormGroup>
+            </Form.Group>
           </Col>
           <Col sm={12} md={6} className="">
-            <FormGroup className="form-label-group">
+            <Form.Group className="form-label-group">
               <PhoneField
                 id="company_phone"
                 label="COMPANY PHONE NUMBER"
@@ -162,7 +167,7 @@ export default function Step2(props) {
                 phone={userData.user_phone}
                 onChange={(e)=>setUserData({user_phone: e.split('+')[1]})}
               />
-            </FormGroup>
+            </Form.Group>
           </Col>
         </Row>
       </FormContainer>
