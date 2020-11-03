@@ -1,8 +1,6 @@
 import React from "react";
 import styled from 'styled-components'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUser, faBuilding } from "@fortawesome/free-regular-svg-icons";
-import { faShieldAlt } from "@fortawesome/free-solid-svg-icons";
 
 const Wrapper = styled.div`
 margin: 0 20%;

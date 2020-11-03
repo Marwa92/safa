@@ -1,8 +1,7 @@
 import React, { useReducer, useState } from "react";
 import styled from "styled-components";
 import { Form, Button } from 'react-bootstrap';
-import { faUser, faBuilding } from "@fortawesome/free-regular-svg-icons";
-import { faShieldAlt } from "@fortawesome/free-solid-svg-icons";
+import { faUser, faBuilding, faCheckCircle } from "@fortawesome/free-regular-svg-icons";
 import Step1 from "./Step1";
 import Step2 from "./Step2";
 import Step3 from "./Step3";
@@ -49,7 +48,7 @@ export default function Signup() {
       user_phone: ""
     }
   );
-const steps =[{icon:faUser}, {icon:faBuilding},{icon:faShieldAlt}]  
+const steps =[{icon:faUser}, {icon:faBuilding},{icon:faCheckCircle}]  
 const [success, setSuccess] = useState(false)
   const handleChange = (event) => {
     const { id, value } = event.target;
