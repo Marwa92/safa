@@ -12,12 +12,13 @@ const MessageContainer = styled.div`
   margin-top: 1em;
   background-color: #fff;
   padding-top: 1em;
-  padding-left: 0.7em;
-  padding-right: 0.7em;
-  padding-bottom: 0.7em;
-  border-radius: 2px;
+  padding-left: 0.9em;
+  padding-right: 0.9em;
+  padding-bottom: 0.8em;
+  border-radius: 7px;
   color: #ff5f59;
 `;
+
 const ImageWrapper = styled.div`
     display: flex;
     justify-content: center;

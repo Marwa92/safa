@@ -14,11 +14,11 @@ const Wrapper = styled.div`
 const FormContainer = styled.div`
   margin-top: 1em;
   background-color: #fff;
-  padding-top: 0.7em;
-  padding-left: 0.7em;
-  padding-right: 0.7em;
-  padding-bottom: 0.7em;
-  border-radius: 2px;
+  padding-top: 0.8em;
+  padding-left: 0.9em;
+  padding-right: 0.9em;
+  padding-bottom: 0.8em;
+  border-radius: 7px;
 `;
 const FormGroup= styled(Form.Group)`
 position: relative;
