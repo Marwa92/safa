@@ -20,6 +20,9 @@ const FormContainer = styled.div`
   padding-bottom: 0.7em;
   border-radius: 2px;
 `;
+const FormGroup= styled(Form.Group)`
+position: relative;
+`
 const FormLabel = styled(Form.Label)`
   color: #212529;
   font-family: "Montserrat";
@@ -27,13 +30,17 @@ const FormLabel = styled(Form.Label)`
   line-height: 1.2em;
   display: block;
   text-align: left;
+  position: absolute;
+  margin-top: 0.65em;
+  margin-left: 0.75em;
+  text-transform: uppercase;
 `;
 const FormControl = styled(Form.Control)`
   box-sizing: border-box;
   border: 1px solid #dbdbdb;
   border-radius: 3px;
-  height: 2.2em;
-  padding-top: 0.2em;
+  height: 3.5em;
+  padding-top: 1.2em;
   padding-left: 0.75em;
   margin-bottom: 0.1em;
   ::placeholder {
@@ -49,7 +56,7 @@ export default function Step1(props) {
     currentStep !==1?null:( <Wrapper>
       Tell us more about you.
       <FormContainer>
-        <Form.Group controlId="user_full_name" className="form-label-group">
+        <FormGroup controlId="user_full_name" className="form-label-group">
           <FormLabel className="label">FULL NAME</FormLabel>
           <FormControl
             required
@@ -59,8 +66,8 @@ export default function Step1(props) {
             value={userData.user_full_name}
             onChange={handleChange}
           />
-        </Form.Group>
-        <Form.Group
+        </FormGroup>
+        <FormGroup
           controlId="user_email"
           className="form-label-group"
         >
@@ -73,7 +80,7 @@ export default function Step1(props) {
             value={userData.user_email}
             onChange={handleChange}
           />
-        </Form.Group>
+        </FormGroup>
         <Row>
           <Col sm={12} md={6} className="">
             <Form.Group className="form-label-group">
@@ -91,11 +98,11 @@ export default function Step1(props) {
             </Form.Group>
           </Col>
           <Col sm={12} md={6} className="">
-            <Form.Group className="form-label-group">
-              <FormLabel className="label">PHONE NUMBER</FormLabel>
+            <FormGroup className="form-label-group">
               <PhoneField
                 id="user_phone"
                 fontFamily="Montserrat"
+                label="PHONE NUMBER"
                 backgroundImage={`url(${arrow})`}
                 backgroundSize="1em 1em"
                 fontWeight="300"
@@ -103,10 +110,10 @@ export default function Step1(props) {
                 setUserData={setUserData}
                 onChange={(e)=>setUserData({user_phone: e.split('+')[1]})}
               />
-            </Form.Group>
+            </FormGroup>
           </Col>
         </Row>
-        <Form.Group controlId="user_password" className="form-label-group">
+        <FormGroup controlId="user_password" className="form-label-group">
           <FormLabel className="label">PASSWORD</FormLabel>
           <FormControl
             required
@@ -116,8 +123,8 @@ export default function Step1(props) {
             value={userData.user_password}
             onChange={handleChange}
           />
-        </Form.Group>
-        <Form.Group controlId="user_password_confirmation" className="form-label-group">
+        </FormGroup>
+        <FormGroup controlId="user_password_confirmation" className="form-label-group">
           <FormLabel className="label">REPEAT PASSWORD</FormLabel>
           <FormControl
             required
@@ -127,7 +134,7 @@ export default function Step1(props) {
             value={userData.user_password_confirmation}
             onChange={handleChange}
           />
-        </Form.Group>
+        </FormGroup>
       </FormContainer>
     </Wrapper>)
   );

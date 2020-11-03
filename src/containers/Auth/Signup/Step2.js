@@ -20,6 +20,9 @@ const FormContainer = styled.div`
   padding-bottom: 0.7em;
   border-radius: 2px;
 `;
+const FormGroup= styled(Form.Group)`
+position: relative;
+`
 const FormLabel = styled(Form.Label)`
   color: #212529;
   font-family: "Montserrat";
@@ -27,13 +30,17 @@ const FormLabel = styled(Form.Label)`
   line-height: 1.2em;
   display: block;
   text-align: left;
+  position: absolute;
+  margin-top: 0.65em;
+  margin-left: 0.75em;
+  text-transform: uppercase;
 `;
 const FormControl = styled(Form.Control)`
   box-sizing: border-box;
   border: 1px solid #dbdbdb;
   border-radius: 3px;
-  height: 2.2em;
-  padding-top: 0.2em;
+  height: 3.5em;
+  padding-top: 1.2em;
   padding-left: 0.75em;
   margin-bottom: 0.1em;
   ::placeholder {
@@ -60,7 +67,7 @@ export default function Step2(props) {
           Entering this information correctly will facilitate the company
           verification process
         </Note>
-      <Form.Group controlId="company_name" className="form-label-group">
+      <FormGroup controlId="company_name" className="form-label-group">
           <FormLabel className="label">COMPANY NAME</FormLabel>
           <FormControl
             required
@@ -70,8 +77,8 @@ export default function Step2(props) {
             value={userData.company_name}
             onChange={handleChange}
           />
-        </Form.Group>
-        <Form.Group controlId="company_address" className="form-label-group">
+        </FormGroup>
+        <FormGroup controlId="company_address" className="form-label-group">
           <FormLabel className="label">ADDRESS</FormLabel>
           <FormControl
             required
@@ -81,8 +88,8 @@ export default function Step2(props) {
             value={userData.company_address}
             onChange={handleChange}
           />
-        </Form.Group>
-        <Form.Group
+        </FormGroup>
+        <FormGroup
           controlId="company_business_email"
           className="form-label-group"
         >
@@ -95,10 +102,10 @@ export default function Step2(props) {
             value={userData.company_business_email}
             onChange={handleChange}
           />
-        </Form.Group>
+        </FormGroup>
         <Row>
           <Col sm={12} md={6} className="">
-            <Form.Group className="form-label-group">
+            <FormGroup className="form-label-group">
               <FormLabel className="label">COUNTRY</FormLabel>
               <CountrySelector
                 id="company_country_id"
@@ -110,10 +117,10 @@ export default function Step2(props) {
                 onChange={handleChange}
                 array={countries}
               />
-            </Form.Group>
+            </FormGroup>
           </Col>
           <Col sm={12} md={6} className="">
-          <Form.Group className="form-label-group">
+          <FormGroup className="form-label-group">
               <FormLabel className="label">CITY</FormLabel>
               <CountrySelector
                 id="company_city_id"
@@ -125,15 +132,15 @@ export default function Step2(props) {
                 setUserData={setUserData}
                 onChange={handleChange}
               />
-            </Form.Group>
+            </FormGroup>
           </Col>
         </Row>
         <Row>
           <Col sm={12} md={6} className="">
-            <Form.Group className="form-label-group">
-              <FormLabel className="label">COMPANY PHONE NUMBER</FormLabel>
+            <FormGroup className="form-label-group">
               <PhoneField
                 id="company_phone"
+                label="COMPANY PHONE NUMBER"
                 fontFamily="Montserrat"
                 backgroundImage={`url(${arrow})`}
                 backgroundSize="1em 1em"
@@ -141,13 +148,13 @@ export default function Step2(props) {
                 phone={userData.company_phone}
                 onChange={(e)=>setUserData({company_phone: e.split('+')[1]})}
               />
-            </Form.Group>
+            </FormGroup>
           </Col>
           <Col sm={12} md={6} className="">
-            <Form.Group className="form-label-group">
-              <FormLabel className="label">COMPANY PHONE NUMBER</FormLabel>
+            <FormGroup className="form-label-group">
               <PhoneField
                 id="company_phone"
+                label="COMPANY PHONE NUMBER"
                 fontFamily="Montserrat"
                 backgroundImage={`url(${arrow})`}
                 backgroundSize="1em 1em"
@@ -155,7 +162,7 @@ export default function Step2(props) {
                 phone={userData.user_phone}
                 onChange={(e)=>setUserData({user_phone: e.split('+')[1]})}
               />
-            </Form.Group>
+            </FormGroup>
           </Col>
         </Row>
       </FormContainer>

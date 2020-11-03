@@ -9,7 +9,7 @@ const Container = styled.div`
   padding-left: 0;
 `;
 const Select = styled(Form.Control)`
-  height: ${(props) => props.height};
+  height: 3.5em;
   width: ${(props) => props.width};
   appearance: none;
   background-repeat: no-repeat, repeat;
@@ -22,6 +22,8 @@ const Select = styled(Form.Control)`
   box-shadow: ${(props) => props.boxShadow};
   background-image: ${(props) => props.backgroundImage};
   padding-left: 0.75em;
+  padding-top:1em;
+  color: #acacac;
   :focus {
     outline: none !important;
     outline-offset: none !important;
@@ -37,11 +39,11 @@ const Option = styled.option`
   letter-spacing: normal;
   color: ${(props) => props.color};
   width: auto;
+
 `;
 
 export default function CountrySelector(props) {
   const {
-    onChange,
     setUserData,
     id,
     height,
@@ -64,8 +66,7 @@ export default function CountrySelector(props) {
       <Select
         as="select"
         id={id}
-        onChange={(e) => {setUserData({[id]: e.target.value });
-        console.log("ee:", e.target.id, e.target.value);}}
+        onChange={(e) => {setUserData({[id]: e.target.value })}}
         fontFamily={fontFamily}
         boxSizing={boxSizing}
         height={height}
@@ -78,6 +79,7 @@ export default function CountrySelector(props) {
         fontSize={fontSize}
         fontWeight={fontWeight}
       >
+        <Option value="" disabled selected>Choose your country</Option>
         {array.map((item, index) => (
           <Option
             key={index}
@@ -112,7 +114,7 @@ CountrySelector.propTypes = {
 };
 
 CountrySelector.defaultProps = {
-  height: "2.2em",
+  height: "3em",
   width: "100%",
   backgroundColor: "#ffffff",
   borderRadius: "3px",
