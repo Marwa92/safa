@@ -3,17 +3,14 @@ import { Button } from 'react-bootstrap'
 import styled from 'styled-components'
 
 const Prevbutton = styled(Button)`
+border: none;
 width: 5em;
 margin-left: 60vw;
 margin-top: 1.75em;
 background-color: #DCDFE1;
-border: none;
 color: grey;
 display: inline-block;
-:hover {
-color: white;
-border: black;
-}
+
 `
 
 export default function PrevButton(props) {
@@ -25,7 +22,7 @@ export default function PrevButton(props) {
        setCurrentStep(step)
     }
     return (
-        <Prevbutton onClick={prev}>
+        <Prevbutton onClick={prev} className="mx-2">
           Back
         </Prevbutton>
     )

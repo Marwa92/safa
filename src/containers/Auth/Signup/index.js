@@ -23,6 +23,11 @@ width: 12em;
 margin-right: 20%;
 margin-top: 1.75em;
 `
+
+const ButtonGroup = styled.div`
+   display: flex;
+   justify-content: flex-end;
+`
 export default function Signup() {
   const [currentStep, setCurrentStep] = useState(1)
   const [userData, setUserData] = useReducer(
@@ -79,10 +84,12 @@ const [success, setSuccess] = useState(false)
             setUserData={setUserData}
             handleChange={handleChange}
         />
-            { currentStep !==1&&
+        <ButtonGroup className="">
+        { currentStep !==1&&
               <PrevButton currentStep={currentStep} setCurrentStep={setCurrentStep} />}
           {   currentStep <3?  <NextButton currentStep={currentStep} setCurrentStep={setCurrentStep} />: <SubmitButton onClick={handleSubmit}>Confirm</SubmitButton>}
-      </Form>
+        </ButtonGroup>
+        </Form>
       </>
       }
     </FlexWrapper>

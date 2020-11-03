@@ -3,10 +3,10 @@ import { Button } from 'react-bootstrap'
 import styled from 'styled-components'
 
 const Nxtbutton = styled(Button)`
-float: right;
 width: 12em;
 margin-right: 20%;
 margin-top: 1.75em;
+border:none;
 `
 
 export default function NextButton(props) {

@@ -68,7 +68,7 @@ export default function Step2(props) {
           Entering this information correctly will facilitate the company
           verification process
         </Note>
-      <FormGroup controlId="company_name" className="form-label-group border">
+      <FormGroup controlId="company_name" className="form-label-group border rounded">
           <FormLabel className="label">COMPANY NAME</FormLabel>
           <FormControl
             required
