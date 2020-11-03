@@ -22,9 +22,9 @@ flex-direction:row;
 `
 
 const IconWrapper = styled.div`
-width: 50px;
-height: 50px;
-background: #FAF9F8;
+  width: 50px;
+  height: 50px;
+  background: #FAF9F8;
   border-radius:50%;
   display:inline-block;
   color: grey;
@@ -41,29 +41,17 @@ const Spacing = styled.hr`
 `
 
 export default function Bar(props) {
-  const { currentStep } = props;
+  const { currentStep, steps } = props;
   return (
   <Wrapper className="">
-      <IconWrapper className={`pt-2 ${currentStep===1?'active': 'done'} `}>       
-        <FontAwesomeIcon
-          icon={faUser}
-          size="2x"
-        />
-      </IconWrapper>
-      <Spacing className={`mt-2 ${currentStep!==1?'complete': null}`} />
-      <IconWrapper className={`pt-2 ${currentStep===2?'active': currentStep===3?'done': null} `}>       
-       <FontAwesomeIcon
-         icon={faBuilding}
-         size="2x"
-        />
-      </IconWrapper>
-      <Spacing className={`mt-2 ${currentStep===3?'complete': null}`} />
-      <IconWrapper className={`pt-2 ${currentStep===3?'active': null} `}>       
-       <FontAwesomeIcon
-         icon={faShieldAlt}
-         size="2x"
-        
-      />
-     </IconWrapper>
+    {steps.map((step,i)=>{   
+    return ( <>
+    {i!==0&& <Spacing className={`mt-2 ${(currentStep===i+1 && i>0 )||( currentStep>i+1 && i>0)?'complete': null}`} />}
+     <IconWrapper className={`pt-2 ${currentStep==i+1?'active': currentStep>i+1?'done':null} `}>       
+      <FontAwesomeIcon
+        icon={step.icon}
+        size="2x"
+       />
+     </IconWrapper></>)})}
   </Wrapper>);
 }
