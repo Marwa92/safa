@@ -16,7 +16,7 @@ const Select = styled(Form.Control)`
   background-position: right 1.1em top 50%, 0 0;
   background-size: ${(props) => props.backgroundSize};
   border-radius: ${(props) => props.borderRadius};
-  border: ${(props) => props.border};
+  border: 1px solid #dbdbdb;
   background-color: ${(props) => props.backgroundColor};
   box-sizing: ${(props) => props.boxSizing};
   box-shadow: ${(props) => props.boxShadow};

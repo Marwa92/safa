@@ -11,7 +11,7 @@ const Phone = styled(PhoneInput)`
     width: 100%;
     height: 3em;
     border-radius: 3px;
-    border: solid 1px #081c64;
+    border: 1px solid #dbdbdb;
     background-color: #ffffff;
     padding-left: 0.75em;
     padding-top: 1em;
@@ -33,7 +33,7 @@ const Phone = styled(PhoneInput)`
     height: 3em;
     width: 2.2em;
     border-radius: 3px;
-    border: solid 1px #081c64;
+    border: 1px solid #dbdbdb;
   }
   --PhoneInputCountrySelectArrow-color: #0d9909;
   .PhoneInputCountryIconImg {
