@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { Form, Col, Row } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye } from "@fortawesome/free-regular-svg-icons";
-import CountrySelector from "../../../components/CountrySelector";
+import Selector from "../../../components/Selector";
 import PhoneField from "../../../components/PhoneField";
 import arrow from "../../../assets/ArrowDown.png";
 
@@ -95,7 +95,7 @@ export default function Step1(props) {
           <Col sm={12} md={6} className="">
             <Form.Group className="form-label-group">
               <FormLabel className="label">COUNTRY</FormLabel>
-              <CountrySelector
+              <Selector
                 id="company_country_id"
                 fontFamily="Montserrat"
                 backgroundImage={`url(${arrow})`}

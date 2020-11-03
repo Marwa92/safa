@@ -42,7 +42,7 @@ const Option = styled.option`
 
 `;
 
-export default function CountrySelector(props) {
+export default function Selector(props) {
   const {
     setUserData,
     id,

@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Form, Col, Row } from "react-bootstrap";
-import CountrySelector from "../../../components/CountrySelector";
+import Selector from "../../../components/Selector";
 import PhoneField from "../../../components/PhoneField";
 import arrow from "../../../assets/ArrowDown.png";
 
@@ -112,7 +112,7 @@ export default function Step2(props) {
           <Col sm={12} md={6} className="">
             <FormGroup className="form-label-group">
               <FormLabel className="label">COUNTRY</FormLabel>
-              <CountrySelector
+              <Selector
                 id="company_country_id"
                 fontFamily="Montserrat"
                 backgroundImage={`url(${arrow})`}
@@ -127,7 +127,7 @@ export default function Step2(props) {
           <Col sm={12} md={6} className="">
           <FormGroup className="form-label-group">
               <FormLabel className="label">CITY</FormLabel>
-              <CountrySelector
+              <Selector
                 id="company_city_id"
                 fontFamily="Montserrat"
                 backgroundImage={`url(${arrow})`}
